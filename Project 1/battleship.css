@@ -1,0 +1,42 @@
+table{
+    height: 40vh;
+    width: 25%;
+    background-color: #87CEFA;
+    border-collapse:collapse;
+    border:1px solid #000;
+    table-layout: fixed;
+}
+
+table th{
+    border: 1px solid #000;
+    overflow: hidden;
+    text-align: center;
+    background-color: gray;
+}
+
+table td{
+    border:1px solid #000;
+    overflow: hidden;
+    text-align: center;
+    height: 10%;
+}
+
+
+.left_header{
+    margin-top: 3.35vh;
+    height: 36.65vh;
+    width: 2.5%;
+    background-color: gray;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    table-layout: fixed;
+    float: left;
+    font-weight: bold;
+}
+
+.left_header td{
+    border:1px solid #000;
+    overflow: hidden;
+    text-align: center;
+    height: 10%;
+}
