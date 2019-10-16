@@ -1,0 +1,65 @@
+.leftblock{
+  float: left;
+}
+.rightblock{
+  float: left;
+  margin-left: 20%;
+}
+
+.forms {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.forms input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.forms input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.forms input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.events_list {
+  border-collapse: collapse;
+}
+
+.events_list td, .events_list th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.events_list tr:nth-child(even){background-color: #f2f2f2;}
+.events_list tr:nth-child(odd){background-color: #F0F8FF;}
+
+.events_list tr:hover {background-color: #ddd;}
+
+.events_list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+body{
+    background: #7FFFD4;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+}

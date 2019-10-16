@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}Customer Page for {{ name }}{% endblock %}
+{% block body %}
+    <h2>{{ name }}'s Customer Page: <a href="{{ url_for('logout') }}">Sign Out</a> </h2>
+    <div class="leftblock">
+        <h2>Request an Event</h2>
+        <div class="forms">
+            <form action="{{ url_for('request_event', id=id) }}" method="post">
+                <table>
+                    <tr>
+                        <td><label for="eventname">Event Name:</label></td>
+                        <td><input type="text" id="eventname" name="name" placeholder="Name of Requested Event"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="eventdate">Event Date</label></td>
+                        <td><input type="date" id="eventdate" name="date" placeholder="Date of Requested Event"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Submit Request"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div class="rightblock">
+        <h2>Events Requested:</h2>
+        <table class="events_list">
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Event Date</th>
+                    <th>Cancel Request</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for event in current %}
+                <tr>
+                    <form action="{{ url_for('cancel_event', event_id=event[0]) }}" method="post">
+                            <td>{{ event[1] }}</td>
+                            <td>{{ event[2] }}</td>
+                            <td><input type="submit" value="Cancel:"></td>
+                    </form>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

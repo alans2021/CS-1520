@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}Owner Page{% endblock %}
+{% block body %}
+    <div class="leftblock">
+        <h2>Owner's Page: <a href="{{ url_for('logout') }}">Sign Out</a> </h2>
+        <div class="forms">
+            <form action="{{ url_for('add_staff') }}" method="post">
+                <table>
+                    <tr>
+                        <td><label for="staffname">New Staff Name</label></td>
+                        <td><input type="text" id="staffname" name="name" placeholder="New Staff's Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="staffpass">New Staff Password</label></td>
+                        <td><input type="password" id="staffpass" name="password" placeholder="New Staff's Password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Create New Staff Account"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div class="rightblock">
+        <h2>Events Scheduled:</h2>
+        <table class="events_list">
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Event Date</th>
+                    <th>Staff Members Assigned</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+                    {% for info in event %}
+                        {% if info == None %}
+                            <td>No Staff Assigned!</td>
+                        {% else %}
+                            <td>{{ info }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% else %}
+                There are no scheduled events
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
