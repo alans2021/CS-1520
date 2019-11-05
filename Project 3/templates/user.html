@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block title %}Home Page for {{ name }}{% endblock %}
+{% block body %}
+    <h2>{{ name }}'s User Page: <a href="{{ url_for('logout') }}">Sign Out</a> </h2>
+    <div class="leftblock" style="width: 33%">
+        <h2>Chatrooms to Join:</h2>
+        {% if rooms is not none %}
+            <table class="chat_list">
+                <thead>
+                    <tr>
+                        <th>Chatroom Name</th>
+                        <th>Chatroom Owner</th>
+                        <th>Join Chatroom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for room in rooms %}
+                        <tr>
+                            <form action="{{ url_for('chat_room', room=room[0], name=name) }}" method="post">
+                                <td>{{ room[1] }}</td>
+                                <td>{{ room[2] }}</td>
+                                <td><input type="submit" value="Join room:"></td>
+                            </form>
+                        </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h4>No Chatrooms Exist!</h4>
+        {% endif %}
+    </div>
+
+    <div class="leftblock" style="width: 33%">
+        <h2>Create a Chatroom</h2>
+        <div class="forms">
+            <form action="" method="post">
+                <table>
+                    <tr>
+                        <td><label for="chatname">Chatroom Name:</label></td>
+                        <td><input type="text" id="chatname" name="chatname" placeholder="Name of Chatroom"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Submit Request"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div class="leftblock" style="margin-left: 5%">
+        {% if delete is not none %}
+            <h2>Delete a Chatroom</h2>
+                <table class="chat_list">
+                    <thead>
+                        <tr>
+                            <th>Chatroom Name</th>
+                            <th>Delete Chatroom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for room in delete %}
+                            <tr>
+                                <form action="{{ url_for('delete_room', room=room.room_id, name=name) }}" method="post">
+                                    <td>{{ room.name }}</td>
+                                    <td><input type="submit" value="Delete room:"></td>
+                                </form>
+                            </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %} {{ room }} {% endblock %}
+{% block script %}
+    <script type="text/javascript" src="/static/script.js"></script>
+{% endblock %}
+{% block body %}
+    <h2>Messages of {{ room }} for <div id="username">{{name}}</div> </h2>
+        <h3><a href="{{ url_for('logout') }}">Sign Out: </a></h3>
+        <h3><a href="{{ url_for('user', name=name) }}"> Leave Chatroom: </a></h3>
+
+    <div id="chat_messages">
+        <table id="messages_list">
+            {% if messages is not none %}
+                {% for message in messages %}
+                    <tr>
+                        <td style="width: 10%; font-weight: bold">{{ message[2] }}:</td>
+                        <td style="width: 70%"> {{ message[0] }}</td>
+                        <td style="width: 20%; font-size: small"><div class="right_text">{{ message[1] }}</div></td>
+                    </tr>
+                {% endfor %}
+
+            {% else %}
+                <div id="no_msg">There's no message so far.</div>
+            {% endif %}
+        </table>
+    </div>
+
+    <h4>Enter a message</h4>
+    <form action="" method="post">
+        <p><input id="post_message" type="text" name="text" size="60" value="">
+        <input id="submit_message" type="button" value="Send">
+    </form>
+{% endblock %}
