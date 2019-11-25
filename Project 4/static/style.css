@@ -1,0 +1,85 @@
+.leftblock{
+  float: left;
+}
+.rightblock{
+  float: left;
+  margin-left: 20%;
+}
+
+.forms {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.forms input[type=text] {
+  padding: 12px 20px;
+  float: right;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.forms input[type=button] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.forms input[type=button]:hover {
+  background-color: #45a049;
+}
+
+
+#summary{
+  width: 25%;
+  float: left;
+  border-collapse: collapse;
+}
+
+#summary td, #summary th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#summary tr:nth-child(even){background-color: #f2f2f2;}
+#summary tr:nth-child(odd){background-color: #F0F8FF;}
+
+#summary tr:hover {background-color: #ddd;}
+
+#summary th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.right_text{
+  text-align: right;
+  margin-right: 2%;
+}
+
+#add_cat{
+  width: 25%;
+  float: left;
+  margin-left: 5%;
+}
+
+#add_purch{
+  width: 30%;
+  float: left;
+  margin-left: 5%;
+}
+
+body{
+    background: #7FFFD4;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Budget Application</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+	</head>
+	<body id="theBody">
+        <h2 id="header"></h2>
+		<table id="summary">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Budget Status / Total Spent</th>
+                    <th>Remove?</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Miscellaneous</td>
+                    <td>$<span id="value_Miscellaneous">0</span></td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+		</table>
+
+        <div id="add_cat">
+            <form name="theForm" class="forms">
+                <table>
+                    <tr>
+                        <td style="width: 30%"><label for="newCategory">Name: </label></td>
+                        <td style="width: 70%"><input type="text" id="newCategory" name="" value="" /></td>
+                    </tr>
+
+                    <tr>
+                        <td style="width: 30%"><label for="budgetLimit">Budget Limit: </label></td>
+                        <td style="width: 70%"><input type="text" id="budgetLimit" name="Max Budget" value="" /></td>
+                    </tr>
+                </table>
+                <input type="button" id="catButton" value="Add Category" />
+
+            </form>
+        </div>
+
+        <div id="add_purch">
+            <form name="theForm" class="forms">
+                <table>
+                    <tr>
+                        <td style="width: 30%"><label for="catPurchase">Category: </label></td>
+                        <td style="width: 70%"><input type="text" id="catPurchase" name="" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%"><label for="newPurchase">Name: </label></td>
+                        <td style="width: 70%"><input type="text" id="newPurchase" name="" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%"><label for="purchasePrice">Price: </label></td>
+                        <td style="width: 70%"><input type="text" id="purchasePrice" name="" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%"><label for="purchaseDay">Day: </label></td>
+                        <td style="width: 70%"><input type="text" id="purchaseDay" name="" value="" /></td>
+                    </tr>
+                </table>
+                <input type="button" id="purchButton" value="Add Purchase" />
+            </form>
+        </div>
+	</body>
+</html>
